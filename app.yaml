@@ -1,0 +1,18 @@
+runtime: php72
+env: flex
+runtime_config:
+    document_root: .
+
+-url: /.*
+script: auto
+entrypoint:
+  server handler.php 
+  
+env_variables:
+    APP_LOG: errorlog
+    GOOGLE_STORAGE_BUCKET: "biotech-capstone-project.biotechcapstone.com"
+    MYSQL_USER: "<your username>"
+    MYSQL_PASSWORD: "<your password>"
+    MYSQL_DSN: "mysql:dbname=testdb;unix_socket=/cloudsql/biotech-capstone-project:us-central1:biotechsql"
+beta_settings:
+    cloud_sql_instances: "biotech-capstone-project:us-central1:biotechsql"
